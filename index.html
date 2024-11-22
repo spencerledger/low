@@ -107,20 +107,22 @@
         </div>
     </main>
 
-    <!-- Audio Player at the bottom-right corner -->
+    <!-- Audio Player with autoplay -->
     <div class="audio-container">
-        <audio id="audio-player">
+        <audio id="audio-player" controls>
             <source src="JonathanLow.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
 
     <script>
-        // Autoplay the audio on page load
+        // Attempt to autoplay the audio programmatically
         window.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('audio-player');
-            audio.play().catch(error => {
-                console.log('Autoplay failed:', error.message);
+            audio.play().then(() => {
+                console.log('Audio autoplayed successfully');
+            }).catch(error => {
+                console.log('Autoplay blocked:', error.message);
             });
         });
     </script>
