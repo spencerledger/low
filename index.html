@@ -107,24 +107,23 @@
         </div>
     </main>
 
-    <!-- Audio Player with autoplay -->
+    <!-- Audio Player at the bottom-right corner -->
     <div class="audio-container">
-        <audio id="audio-player" controls>
+        <audio controls>
             <source src="JonathanLow.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
 
     <script>
-        // Attempt to autoplay the audio programmatically
-        window.addEventListener('DOMContentLoaded', () => {
-            const audio = document.getElementById('audio-player');
-            audio.play().then(() => {
-                console.log('Audio autoplayed successfully');
-            }).catch(error => {
-                console.log('Autoplay blocked:', error.message);
-            });
-        });
+        // Alternate tab title every 5 seconds
+        const titles = ["Jonathan Low", "Vampire Weekend"];
+        let titleIndex = 0;
+
+        setInterval(() => {
+            document.title = titles[titleIndex];
+            titleIndex = (titleIndex + 1) % titles.length;
+        }, 5000);
     </script>
 </body>
 </html>
