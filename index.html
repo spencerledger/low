@@ -7,14 +7,23 @@
     <link rel="icon" href="Gun.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* Background Colour Animation */
+        @keyframes backgroundChange {
+            0% { background-color: #f4f4f4; }
+            25% { background-color: #e1bee7; }
+            50% { background-color: #c5cae9; }
+            75% { background-color: #b2ebf2; }
+            100% { background-color: #f4f4f4; }
+        }
+
         /* Global Styles */
         body {
             font-family: 'Open Sans', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
             text-align: center;
             margin: 0;
             padding: 0;
+            animation: backgroundChange 10s infinite;
+            color: #333;
         }
 
         h1 {
@@ -37,18 +46,19 @@
             line-height: 1.8;
         }
 
-        /* Audio Player Container */
+        /* Audio Player Container with Matching Animation */
         .audio-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #2c3e50;
+            background-color: rgba(44, 62, 80, 0.8);
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             gap: 10px;
+            animation: backgroundChange 10s infinite; /* Matches background animation */
         }
 
         .audio-container audio {
@@ -56,7 +66,7 @@
             border-radius: 5px;
         }
 
-        /* Custom Audio Controls Styling */
+        /* Optional: Styling Audio Controls */
         .audio-container button {
             background-color: #e74c3c;
             color: #fff;
