@@ -7,7 +7,6 @@
     <link rel="icon" href="Gun.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Background Colour Animation */
         @keyframes backgroundChange {
             0% { background-color: #f4f4f4; }
             12.5% { background-color: #ffebee; }
@@ -20,7 +19,6 @@
             100% { background-color: #f4f4f4; }
         }
 
-        /* Global Styles */
         body {
             font-family: 'Open Sans', sans-serif;
             text-align: center;
@@ -50,7 +48,6 @@
             line-height: 1.8;
         }
 
-        /* Audio Player Container with Matching Animation */
         .audio-container {
             position: fixed;
             bottom: 20px;
@@ -62,29 +59,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            animation: backgroundChange 10s infinite; /* Matches background animation */
+            animation: backgroundChange 10s infinite;
         }
 
         .audio-container audio {
             width: 250px;
             border-radius: 5px;
-        }
-
-        /* Optional: Styling Audio Controls */
-        .audio-container button {
-            background-color: #e74c3c;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            transition: background-color 0.3s ease;
-        }
-
-        .audio-container button:hover {
-            background-color: #c0392b;
         }
     </style>
 </head>
@@ -129,10 +109,20 @@
 
     <!-- Audio Player at the bottom-right corner -->
     <div class="audio-container">
-        <audio autoplay controls>
+        <audio id="audio-player">
             <source src="JonathanLow.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
+
+    <script>
+        // Autoplay the audio on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio-player');
+            audio.play().catch(error => {
+                console.log('Autoplay failed:', error.message);
+            });
+        });
+    </script>
 </body>
 </html>
