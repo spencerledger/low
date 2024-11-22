@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Low</title>
+    <style>
+        /* Importing a modern sans-serif font */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #2c3e50;
+            margin-top: 50px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+
+        .audio-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .lyrics {
+            font-size: 1.4em;
+            margin-top: 20px;
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        /* Optional: Adding a light box shadow */
+        .audio-container audio {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jonathan Low</h1>
+    </header>
+    <main>
+        <p>Last born of the clan</p>
+        <div class="lyrics">
+            <p>First one to be free</p>
+            <p>Lived inside a house</p>
+            <p>Beneath a hanging tree</p>
+            <p>Loved them deadly nights</p>
+        </div>
+    </main>
+
+    <!-- Audio Player at the bottom-right corner -->
+    <div class="audio-container">
+        <audio controls autoplay>
+            <source src="JonathanLow.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+</html>
